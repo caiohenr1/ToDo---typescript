@@ -14,7 +14,7 @@ export const Header = ( { onCreateTask }: Props) => {
   function onChangeTitle(event: ChangeEvent<HTMLInputElement>) {
     setTitle(event.target.value)
   }
-  function handleSubmit (event: FormEvent) {
+  function handleSubmit (event: any) {
     event.preventDefault()
     onCreateTask(title)
     setTitle('')
@@ -28,7 +28,8 @@ export const Header = ( { onCreateTask }: Props) => {
         <input 
           placeholder='Adicione uma nova tarefa'
           onChange={onChangeTitle}
-          value={title}  
+          value={title}
+          required
         />
         <button>
           Criar

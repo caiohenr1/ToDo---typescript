@@ -14,18 +14,8 @@ export interface ITask {
 }
 
 export const App  = () => {
-  const [tasks, setTasks] = useState<ITask[]>([
-    // {
-    //   id: 'teste',
-    //   title: 'teste',
-    //   isChecked: true,
-    // },
-    // {
-    //   id: 'teste2',
-    //   title: 'teste2',
-    //   isChecked: false,
-    // },
-  ])
+
+  const [tasks, setTasks] = useState<ITask[]>([])
 
   function createNewTask (taskTitle: string) {
     setTasks( [
@@ -45,7 +35,9 @@ export const App  = () => {
   }
 
   function taskCompletedById(taskId: string) {
+    
     const newTasks = tasks.map((task) => {
+
       if(task.id === taskId) {
         return {
           ...task,

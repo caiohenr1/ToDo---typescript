@@ -17,16 +17,15 @@ export const TaskList = ({ taskInfo, onDeleted, onCompleted }: Props) => {
     onDeleted(taskInfo.id)
   }
 
-  function handleClick () {
+  function handleCompleteTask () {
     onCompleted(taskInfo.id)
   }
   return (
     <div className={styles.task_list}>
-      <button className={styles.check_container} onClick={handleClick}>
+      <button className={styles.check_container} onClick={handleCompleteTask}>
         {taskInfo.isChecked ? <BsFillCheckCircleFill /> : <div/>}
       </button>
-      <p>{taskInfo.title} 
-      </p>
+      <p className={taskInfo.isChecked ? styles.taskCompleted : ''}> {taskInfo.title}</p>
       <button 
         className={styles.delete}
         onClick={handleDelete}

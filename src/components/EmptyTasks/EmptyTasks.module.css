@@ -1,0 +1,26 @@
+.empty {
+  width: 100%;
+  max-width: 46rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+  border-top: 1px solid var(--gray-400 );
+}
+
+.empty img {
+  margin-bottom: 1rem;
+}
+
+.empty strong {
+  color: var(--gray-300);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.empty span {
+  color: var(--gray-300);
+  font-size: 1rem;
+  font-weight: 400;
+}

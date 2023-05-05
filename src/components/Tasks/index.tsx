@@ -2,6 +2,7 @@ import { TaskList } from '../TaskList'
 import styles from '../Tasks/Tasks.module.css'
 
 import { ITask } from '../../App'
+import { EmptyTasks } from '../EmptyTasks'
 
 interface TaskProps {
   tasks: ITask[],
@@ -29,15 +30,14 @@ export const Tasks = ( { tasks, onDeleted, onCompleted } : TaskProps) => {
         </div>
       </header>
       <div className={styles.list}>
-        {tasks.map((task) => {
+      {tasks.length > 0 ? tasks.map((task) => {
           return <TaskList  
             key={task.id} 
             taskInfo={task} 
             onDeleted={onDeleted}
-            onCompleted={onCompleted}
-                  
+            onCompleted={onCompleted}       
           />
-        })}
+        }) : <EmptyTasks /> }
       </div>
     </section>
   )
